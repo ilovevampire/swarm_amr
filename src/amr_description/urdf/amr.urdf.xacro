@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amr">
+  <xacro:include filename="$(find amr_description)/urdf/amr_description.urdf.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/amr_gazebo.xacro"/>
+</robot>

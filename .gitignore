@@ -1,0 +1,22 @@
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Gazebo / misc
+*.bag
+*.db3
+*.mcap
+rosbag2_*/
+maps/*.pgm.bak

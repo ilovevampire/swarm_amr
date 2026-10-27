@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="amr">
+  <link name="base_footprint" />
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.002984" rpy="0 0 0" />
+      <mass value="0.8" />
+      <inertia ixx="0.0105867" ixy="0" ixz="0" iyy="0.0176267" iyz="0" izz="0.0262933" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.003" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/base_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.002984" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/base_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="-0.01175 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="3.75e-06" ixy="0" ixz="0" iyy="1.5e-06" iyz="0" izz="3.75e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.01175 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/camera_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.01175 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/camera_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_optical_frame" />
+  <link name="drive_left_wheel_link">
+    <inertial>
+      <mass value="0.15" />
+      <inertia ixx="0.000230937" ixy="0" ixz="0" iyy="0.000421875" iyz="0" izz="0.000230937" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/mesh/drive_left_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0" />
+      <geometry>
+        <cylinder radius="0.075" length="0.04" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="drive_right_wheel_link">
+    <inertial>
+      <origin xyz="1.774728e-05 0 0" rpy="0 0 0" />
+      <mass value="0.15" />
+      <inertia ixx="0.000230937" ixy="0" ixz="0" iyy="0.000421875" iyz="0" izz="0.000230937" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/mesh/drive_right_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0" />
+      <geometry>
+        <cylinder radius="0.075" length="0.04" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_caster_swivel_link">
+    <inertial>
+      <origin xyz="-0.003469 0 -0.025377" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.3e-05" ixy="0" ixz="0" iyy="1.3e-05" iyz="0" izz="8e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.0035 0 -0.024" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/front_left_caster_swivel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003469 0 -0.025377" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/front_left_caster_swivel_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_caster_wheel_link">
+    <inertial>
+      <origin xyz="0.000424 0.001876 0" rpy="0 0 0" />
+      <mass value="0.04" />
+      <inertia ixx="1.44e-05" ixy="0" ixz="0" iyy="1.44e-05" iyz="0" izz="1.44e-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/mesh/front_left_caster_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_caster_swivel_link">
+    <inertial>
+      <origin xyz="-0.003469 0 -0.025285" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.3e-05" ixy="0" ixz="0" iyy="1.3e-05" iyz="0" izz="8e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.0035 0 -0.024" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/front_right_caster_swivel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003469 0 -0.025285" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/front_right_caster_swivel_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="imu_link" />
+  <link name="led_strip_link">
+    <inertial>
+      <origin xyz="0.000158 -0.000663 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="7.53333e-05" ixy="0" ixz="0" iyy="6.66667e-07" iyz="0" izz="7.53333e-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/mesh/led_strip_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.000158 -0.000663 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/led_strip_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="0 0 -0.009" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="2.19792e-05" ixy="0" ixz="0" iyy="2.19792e-05" iyz="0" izz="3.0625e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.009" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/lidar_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.009" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/lidar_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_left_caster_swivel_link">
+    <inertial>
+      <origin xyz="-0.003469 0 -0.025377" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.3e-05" ixy="0" ixz="0" iyy="1.3e-05" iyz="0" izz="8e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.0035 0 -0.024" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_left_caster_swivel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003469 0 -0.025377" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_left_caster_swivel_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_left_caster_wheel_link">
+    <inertial>
+      <origin xyz="1.490116e-08 0 0" rpy="0 0 0" />
+      <mass value="0.04" />
+      <inertia ixx="1.44e-05" ixy="0" ixz="0" iyy="1.44e-05" iyz="0" izz="1.44e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="1.490116e-08 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_left_caster_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_caster_swivel_link">
+    <inertial>
+      <origin xyz="-0.003469 0 -0.025285" rpy="0 0 0" />
+      <mass value="0.03" />
+      <inertia ixx="1.3e-05" ixy="0" ixz="0" iyy="1.3e-05" iyz="0" izz="8e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.0035 0 -0.024" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_right_caster_swivel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003469 0 -0.025285" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_right_caster_swivel_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_caster_wheel_link">
+    <inertial>
+      <origin xyz="1.490116e-08 -0.001876 0" rpy="0 0 0" />
+      <mass value="0.04" />
+      <inertia ixx="1.44e-05" ixy="0" ixz="0" iyy="1.44e-05" iyz="0" izz="1.44e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="1.490116e-08 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/rear_right_caster_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_caster_wheel_link">
+    <inertial>
+      <origin xyz="0.000378 0 0" rpy="0 0 0" />
+      <mass value="0.04" />
+      <inertia ixx="1.44e-05" ixy="0" ixz="0" iyy="1.44e-05" iyz="0" izz="1.44e-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ront_right_caster_wheel_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ultrasonic_center_link">
+    <inertial>
+      <origin xyz="-0.00575 0 -7.450581e-09" rpy="0 0 0" />
+      <mass value="0.005" />
+      <inertia ixx="1.01042e-06" ixy="0" ixz="0" iyy="3.33333e-07" iyz="0" izz="1.01042e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00575 0 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_center_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.00575 0 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_center_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ultrasonic_left_link">
+    <inertial>
+      <origin xyz="-0.00575 7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <mass value="0.005" />
+      <inertia ixx="1.01042e-06" ixy="0" ixz="0" iyy="3.33333e-07" iyz="0" izz="1.01042e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00575 7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_left_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.00575 7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_left_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="ultrasonic_right_link">
+    <inertial>
+      <origin xyz="-0.00575 -7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <mass value="0.005" />
+      <inertia ixx="1.01042e-06" ixy="0" ixz="0" iyy="3.33333e-07" iyz="0" izz="1.01042e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00575 -7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_right_link_visual.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.00575 -7.450581e-09 -7.450581e-09" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://amr_description/mesh/ultrasonic_right_link_collision.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 0.13" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.27 0 0.015" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.570796 0 -1.570796" />
+    <parent link="camera_link" />
+    <child link="camera_optical_frame" />
+  </joint>
+  <joint name="drive_left_wheel_joint" type="continuous">
+    <origin xyz="0 0.192 -0.055" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="drive_left_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+  </joint>
+  <joint name="drive_right_wheel_joint" type="continuous">
+    <origin xyz="0 -0.192 -0.055" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="drive_right_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+  </joint>
+  <joint name="front_left_caster_swivel_joint" type="fixed">
+    <origin xyz="0.19 0.13 -0.06" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_left_caster_swivel_link" />
+  </joint>
+  <joint name="front_left_caster_wheel_joint" type="continuous">
+    <origin xyz="-0.012 0 -0.04" rpy="0 0 0" />
+    <parent link="front_left_caster_swivel_link" />
+    <child link="front_left_caster_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="2" velocity="10" />
+  </joint>
+  <joint name="front_right_caster_swivel_joint" type="fixed">
+    <origin xyz="0.19 -0.13 -0.06" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="front_right_caster_swivel_link" />
+  </joint>
+  <joint name="front_right_caster_wheel_joint" type="continuous">
+    <origin xyz="-0.012 0 -0.04" rpy="0 0 0" />
+    <parent link="front_right_caster_swivel_link" />
+    <child link="front_right_caster_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="2" velocity="10" />
+  </joint>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 -0.13" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+  <joint name="led_strip_joint" type="fixed">
+    <origin xyz="-0.215 0 0.064" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="led_strip_link" />
+  </joint>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.1 0 0.106" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+  </joint>
+  <joint name="rear_left_caster_swivel_joint" type="fixed">
+    <origin xyz="-0.19 0.13 -0.06" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_left_caster_swivel_link" />
+  </joint>
+  <joint name="rear_left_caster_wheel_joint" type="continuous">
+    <origin xyz="-0.012 0 -0.04" rpy="0 0 0" />
+    <parent link="rear_left_caster_swivel_link" />
+    <child link="rear_left_caster_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="2" velocity="10" />
+  </joint>
+  <joint name="rear_right_caster_swivel_joint" type="fixed">
+    <origin xyz="-0.19 -0.13 -0.06" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_right_caster_swivel_link" />
+  </joint>
+  <joint name="rear_right_caster_wheel_joint" type="continuous">
+    <origin xyz="-0.012 0 -0.04" rpy="0 0 0" />
+    <parent link="rear_right_caster_swivel_link" />
+    <child link="rear_right_caster_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="2" velocity="10" />
+  </joint>
+  <joint name="ultrasonic_center_joint" type="fixed">
+    <origin xyz="0.258 0 -0.015" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="ultrasonic_center_link" />
+  </joint>
+  <joint name="ultrasonic_left_joint" type="fixed">
+    <origin xyz="0.258 0.12 -0.015" rpy="0 0 0.261799" />
+    <parent link="base_link" />
+    <child link="ultrasonic_left_link" />
+  </joint>
+  <joint name="ultrasonic_right_joint" type="fixed">
+    <origin xyz="0.258 -0.12 -0.015" rpy="0 0 -0.261799" />
+    <parent link="base_link" />
+    <child link="ultrasonic_right_link" />
+  </joint>
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="drive_left_wheel_joint">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="drive_right_wheel_joint">
+      <command_interface name="velocity" />
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="front_left_caster_wheel_joint">
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="front_right_caster_wheel_joint">
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="rear_left_caster_wheel_joint">
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="rear_right_caster_wheel_joint">
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+</robot>
